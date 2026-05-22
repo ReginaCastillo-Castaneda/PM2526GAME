@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Inventory</title>
+  <link href="css/index.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="game-container">
+
+    <!-- Top Button -->
+    <div class="top-ui">
+      <button class="ui-btn" id="inventoryBtn">Inventory</button>
+      <button class="ui-btn" id="stationBtn">Potion Station</button>
+    </div>
+
+    <!-- Inventory toggle (must be BEFORE the inventory-screen) -->
+    <input type="checkbox" id="inv-toggle" hidden>
+
+    <!-- INVENTORY SECTION -->
+    <div class="inventory-screen">
+      <h2>Inventory</h2>
+
+      <!-- Slot Select Items: put each radio immediately before its label -->
+      <input type="radio" name="item-select" id="item1" hidden checked>
+      <label for="item1" class="slot">
+        <img src="potion-icon.png" alt="Red Potion">
+      </label>
+
+      <input type="radio" name="item-select" id="item2" hidden>
+      <label for="item2" class="slot">
+        <img src="potion-icon.png" alt="Health Potion">
+      </label>
+
+      <!-- Inventory Grid wrapper (optional) -->
+      <div class="inventory-grid"></div>
+
+      <!-- Description Box  -->
+      <div class="description-box">
+        <div class="desc-content" id="desc-item1">
+          <h3>Red Potion</h3>
+          <p>Description of the red potion.</p>
+        </div>
+
+        <div class="desc-content" id="desc-item2">
+          <h3>Health Potion</h3>
+          <p>Description of the health potion.</p>
+        </div>
+      </div>
+
+      <label for="inv-toggle" class="close-btn">Close</label>
+    </div>
+
+    <!-- Potion Station toggle (must be BEFORE the potion-station) -->
+    <input type="checkbox" id="station-toggle" hidden>
+
+    <!-- POTION STATION SECTION -->
+    <div class="potion-station">
+      <div class="workspace">
+        <div class="station">
+          <h2>Ingredients</h2>
+          <div class="ingredient-grid"></div>
+        </div>
+
+        <div class="cauldron-area">
+          <div class="cauldron"></div>
+          <button class="brew-btn">Brew Potion</button>
+        </div>
+
+        <div class="potion-output">
+          <h2>Result</h2>
+          <div class="potion"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Scripts at bottom of body -->
+  <script>
+    // INVENTORY toggle
+    document.getElementById("inventoryBtn").onclick = () => {
+      const toggle = document.getElementById("inv-toggle");
+      toggle.checked = !toggle.checked;
+    };
+
+    // POTION Station toggle (fixed id)
+    document.getElementById("stationBtn").onclick = () => {
+      const toggle = document.getElementById("station-toggle");
+      toggle.checked = !toggle.checked;
+    };
+  </script>
+</body>
+</html>

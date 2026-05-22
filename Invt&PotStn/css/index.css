@@ -1,0 +1,168 @@
+/* --- top / general --- */
+body {
+  font-family: "IM Fell English SC", Georgia;
+  background-color: #f6e1b5;
+  color: #3e3f40;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Top UI */
+.top-ui { 
+  display:flex; 
+  justify-content:center; 
+  gap:20px; 
+  padding:20px; 
+}
+
+.ui-btn {
+  color:#3e3f40; 
+  background:#936535; 
+  font-size:150%; 
+  padding:10px 40px;
+  border-radius:1rem; 
+  font-family:"IM Fell English"; 
+  box-shadow:0 .6rem #624321;
+  cursor:pointer; 
+  border:4px solid #904a00; 
+  transition:0.1s ease;
+}
+
+.ui-btn:active { 
+  box-shadow:0 .2rem #624321; 
+  transform:translateY(5px);
+  color:#f6e1b5; 
+  background:#904a00; 
+}
+
+
+/* Inventory Window */
+.inventory-screen {
+  display:none; 
+  position:fixed; 
+  top:50%; 
+  left:50%; 
+  transform:translate(-50%,-50%);
+  background:#936535; 
+  padding:20px; 
+  border:4px solid #904a00;
+}
+
+/* inventory toggle */
+#inv-toggle:checked ~ .inventory-screen { 
+  display:block; 
+}
+
+/* Inventory grid container  */
+.inventory-grid {
+  display:grid; 
+  grid-template-columns: repeat(4, 60px); 
+  gap:10px;
+  margin-top: 10px;
+}
+
+/* Slot label styling */
+.slot {
+  width:60px; 
+  height:60px; 
+  background:#904a00; 
+  border:2px solid #904a00;
+  cursor:pointer; 
+  display:flex; 
+  align-items:center; 
+  justify-content:center;
+}
+
+/* Highlight selected item */
+input[type="radio"]:checked + .slot {
+  border-color: #d9c22e;
+  box-shadow: 0 0 8px rgba(217,194,46,0.6);
+}
+
+/* Description logic */
+.desc-content { 
+  display:none; 
+  margin-top:20px; 
+  border-top:1px solid #555; 
+}
+
+#item1:checked ~ .description-box #desc-item1,
+#item2:checked ~ .description-box #desc-item2 {
+  display:block;
+}
+
+/* Potion station toggle */
+#station-toggle:checked ~ .potion-station { 
+  display:block; 
+}
+
+
+/* Potion station */
+.potion-station { 
+  display:none; 
+}
+
+.workspace { display:grid; 
+  grid-template-columns:1fr 1fr 1fr; 
+  height:100%; 
+  padding:20px; 
+  gap:20px; 
+}
+
+.station, .potion-output {
+  background:#936535; 
+  border:4px solid #904a00; 
+  padding:20px; 
+  border-radius:10px;
+}
+
+.ingredient-grid { 
+  margin-top:10px; 
+  display:grid; 
+  grid-template-columns:repeat(3,80px); 
+  gap:10px; 
+}
+
+.cauldron-area { 
+  display:flex; 
+  flex-direction:column; 
+  align-items:center; 
+  justify-content:center; 
+}
+
+.cauldron { 
+  width:200px; 
+  height:200px; 
+  background:#3e3f40; 
+  border-radius:50%; 
+  border:6px solid #904a00; 
+  box-shadow: inset 0 0 20px #000; 
+}
+
+.brew-btn { 
+  margin-top:20px; 
+  padding:10px 30px; 
+  background:#936535; 
+  border:4px solid #904a00; 
+  border-radius:10px; 
+  font-family:"IM Fell English"; 
+  font-size:150%; cursor:pointer; 
+  box-shadow:0 .6rem #624321; 
+}
+
+.brew-btn:active { 
+  box-shadow:0 .2rem #624321; 
+  transform:translateY(5px); 
+  background:#904a00; 
+  color:#f6e1b5; 
+}
+
+.potion { 
+  width:120px; 
+  height:180px; 
+  background:#904a00; 
+  margin:20px auto 0; 
+  border-radius:10px; 
+  box-shadow: inset 0 0 15px #000; 
+}
